@@ -1,0 +1,83 @@
+/* INFRALIX CORE STYLES 
+   Brand Color: #f1572b
+   Gemini Final Architecture
+*/
+
+body {
+    background-color: #050505;
+    /* Technical Grid Background - 3% opacity (ghost mode) */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    box-shadow: inset 0 0 250px rgba(0,0,0,0.95);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Classes */
+.nav-glass {
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Card Hover Effect */
+.glass-panel:hover {
+    border-color: rgba(241, 87, 43, 0.5);
+    background: rgba(241, 87, 43, 0.03);
+    transform: translateY(-2px);
+}
+
+/* Footer Link Hover Effect (Orange Glow) */
+.footer-link {
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.footer-link:hover {
+    color: #f1572b; /* Brand Orange */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Pulsing Status Dot (Orange) */
+@keyframes pulse-brand {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241, 87, 43, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(241, 87, 43, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241, 87, 43, 0); }
+}
+
+.status-dot {
+    box-shadow: 0 0 0 0 rgba(241, 87, 43, 0.7);
+    animation: pulse-brand 2s infinite;
+}
+
+/* System Online Green Dot */
+@keyframes pulse-green {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.system-dot {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulse-green 3s infinite;
+}

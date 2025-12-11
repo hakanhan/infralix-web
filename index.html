@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0;url=/en/">
+    <title>Infralix</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #050505;
+            color: #fff;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 2em;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        // JavaScript Redirect (smarter fallback)
+        try {
+            var lang = navigator.language || navigator.userLanguage || 'en';
+            if (lang.startsWith('tr')) {
+                window.location.replace('/tr/');
+            } else if (lang.startsWith('nl')) {
+                window.location.replace('/nl/');
+            } else if (lang.startsWith('fr')) {
+                window.location.replace('/fr/');
+            } else {
+                window.location.replace('/en/');
+            }
+        } catch (e) {
+            window.location.replace('/en/');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/images/logo-orange-icon-white-text.svg" alt="Infralix" class="logo">
+    </div>
+</body>
+</html>
